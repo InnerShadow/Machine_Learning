@@ -1,0 +1,1 @@
+1. binary_classification.py is a simple binary classification task using the perceptron algorithm. It features a fixed coefficient omega[1] while updating omega[0]. The primary purpose is to demonstrate basic binary classification with a visually plotted decision boundary at the end.
