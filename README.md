@@ -4,4 +4,4 @@
 3. SGD is a binary classification task using the gradient descent algorithm and the sigmoid activation function. Stochastic algorithm with pseudo-gradients. Output of the separating hyperplane and a plot of the quality metric (Q) at each iteration at the end of the program.
 4. L2-regularizer is the L2-regularizer task of approximating the original graph with a high-degree polynomial. Enhancing model prediction properties through L2-regularization with varying lambda coefficients, all while preserving the richness of the feature space.
 5. L1-regularizer is the task involves an L1-regularizer with an excessive number of linearly dependent parameters. A comparison of the performance of L1-regularizer, L2-regularizer, and no regularization. The L1-regularizer renders linearly dependent coefficients insignificant.
-6. 
+6. Bayesian_inference is the task involves binary classification using a naive Bayesian approach. It pertains to the probabilistic approach in machine learning tasks and pattern classification.
