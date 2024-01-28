@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def Nuclear_smoothing(K, s):
+def Kernel_smoothing(K, s):
     x = np.arange(0, 10, 0.1)
     x_est = np.arange(0, 10, 0.01)
     N = len(x)
@@ -36,9 +36,9 @@ def Nuclear_smoothing(K, s):
 
 
 def __main__():
-    Nuclear_smoothing(lambda r: np.exp(-2 * r * r), 'Gaussian') # Gaussian kernel
-    Nuclear_smoothing(lambda r: np.abs(1 - r) * bool(r <= 1), 'Triangle') # Triangle kernel
-    Nuclear_smoothing(lambda r: bool(r <= 1), 'Rectangle') # Rectangle kernel
+    Kernel_smoothing(lambda r: np.exp(-2 * r * r), 'Gaussian') # Gaussian kernel
+    Kernel_smoothing(lambda r: np.abs(1 - r) * bool(r <= 1), 'Triangle') # Triangle kernel
+    Kernel_smoothing(lambda r: bool(r <= 1), 'Rectangle') # Rectangle kernel
    
 
 if __name__ == '__main__':
