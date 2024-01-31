@@ -44,11 +44,9 @@ def __main__():
         w = w * np.exp(-1 * alfa[n] * train_labels * predicted)
         w = w / np.sum(w)
 
-
     predicted = alfa[0] * algorithms[0].predict(train_data)
     for n in range(1, T):
         predicted += alfa[n] * algorithms[n].predict(train_data)
-
 
     N = np.sum(np.abs(train_labels - np.sign(predicted)) / 2)
     print(f"Num of incorrect classifications on train set is {N} using {T} crucial trees.")
