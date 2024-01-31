@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def __main__():
-    n_estimators = 4
+    n_estimators = 4    
     max_depth = 2
 
     x = np.arange(0, np.pi, 0.1)
