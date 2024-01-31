@@ -35,7 +35,7 @@ def __main__():
     f, ax = plt.subplots(1, 2)
     for c, n in zip(cycle('bgrcmykgrcmykgrcmykgrcmykgrcmykgrcmyk'), range(NC)):
         clst = x[x_pr == n].T
-        ax[0].scatter(clst[0], clst[1], s=10, color=c)
+        ax[0].scatter(clst[0], clst[1], s = 10, color = c)
 
     plot_dendrogram(clustering, ax=ax[1])
     plt.show()
