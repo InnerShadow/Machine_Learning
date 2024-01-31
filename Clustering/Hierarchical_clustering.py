@@ -5,7 +5,6 @@ from scipy.cluster.hierarchy import dendrogram
 from sklearn.cluster import AgglomerativeClustering
 
 def plot_dendrogram(model, **kwargs):
-
     # Children of hierarchical clustering
     children = model.children_
 
