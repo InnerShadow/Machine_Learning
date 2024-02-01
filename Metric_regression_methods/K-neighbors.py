@@ -7,7 +7,6 @@ from sklearn.neighbors import KNeighborsClassifier
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-
 class KNearestNeighbors:
     def __init__(self, k = 3):
         self.k = k
