@@ -58,7 +58,8 @@ def __main__():
 
         print(f"\nTF-IDF Scores for File {files[i]}:")
         for word, tfidf in tfidf_scores.items():
-            if tfidf > 0.0025 : print(f"{word}: {tfidf}")
+            if tfidf > 0.01 : print(f"{word}: {tfidf}")
+            
 
 if __name__ == '__main__':
     __main__()
