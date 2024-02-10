@@ -41,8 +41,8 @@ class LogisticRegression:
 def __mian__():
     N = 50
 
-    X_1 = np.random.multivariate_normal([1, 1], [[1, 0.5], [0.5, 1]], N)
-    y_1 = np.array([0 for _ in range(N)])
+    X_1 = np.random.multivariate_normal([1, 1], [[1, 0.5], [0.5, 1]], N * 2)
+    y_1 = np.array([0 for _ in range(N * 2)])
 
     X_2 = np.random.multivariate_normal([3, 3], [[1, 0.5], [0.5, 1]], N)
     y_2 = np.array([1 for _ in range(N)])
@@ -99,7 +99,7 @@ def __mian__():
     plt.scatter(X_test[:, 0], X_test[:, 1], c = predictions - y_test, cmap = 'viridis')
     plt.show()
 
-    sns.heatmap(conf_matrix, annot = True, fmt = 'd', cmap = 'Blues', annot_kws = {"size": 16})
+    sns.heatmap(conf_matrix, annot = True)
 
     plt.title('Confusion Matrix')
     plt.xlabel('Predicted')
