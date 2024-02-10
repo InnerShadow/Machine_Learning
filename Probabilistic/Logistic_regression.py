@@ -1,6 +1,8 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+import seaborn as sns
 
 class LogisticRegression:
     def __init__(self, learning_rate = 0.01, num_iterations = 1000):
@@ -37,7 +39,7 @@ class LogisticRegression:
 
 
 def __mian__():
-    N = 30
+    N = 50
 
     X_1 = np.random.multivariate_normal([1, 1], [[1, 0.5], [0.5, 1]], N)
     y_1 = np.array([0 for _ in range(N)])
@@ -69,9 +71,39 @@ def __mian__():
     print(f"Accuracy: {Accuracy}")
     print(f"Recall: {Recall}")
     print(f"Precision: {Precision}")
-    print(f"F1: {2 * (Recall * Precision) / (Recall + Precision)}")
+    print(f"F1: {2 * (Recall * Precision) / (Recall + Precision)}\n")
 
-    plt.scatter(X_test[:, 0], X_test[:, 1], c = abs(predictions - y_test), cmap = 'viridis')
+    # Check using sklearn
+
+    conf_matrix = confusion_matrix(y_test, predictions)
+    TP = conf_matrix[1, 1]
+    TN = conf_matrix[0, 0]
+    FP = conf_matrix[0, 1]
+    FN = conf_matrix[1, 0]
+
+    print(f"Accuracy: {Accuracy}")
+    print(f"Recall: {Recall}")
+    print(f"Precision: {Precision}")
+    print(f"F1: {2 * (Recall * Precision) / (Recall + Precision)}\n")
+
+    recall = recall_score(np.array(y_test), np.array(predictions))
+    precision = precision_score(y_test, predictions)
+    accuracy = accuracy_score(y_test, predictions)
+    f1 = f1_score(y_test, predictions)
+
+    print(f"Accuracy: {accuracy}")
+    print(f"Recall: {recall}")
+    print(f"Precision: {precision}")
+    print(f"F1: {f1}\n")
+
+    plt.scatter(X_test[:, 0], X_test[:, 1], c = predictions - y_test, cmap = 'viridis')
+    plt.show()
+
+    sns.heatmap(conf_matrix, annot = True, fmt = 'd', cmap = 'Blues', annot_kws = {"size": 16})
+
+    plt.title('Confusion Matrix')
+    plt.xlabel('Predicted')
+    plt.ylabel('Actual')
     plt.show()
 
 
