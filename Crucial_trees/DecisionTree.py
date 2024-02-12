@@ -46,7 +46,7 @@ def __main__():
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.transform(X_test)
 
-    model = DecisionTreeClassifier(max_depth = 3)
+    model = DecisionTreeClassifier(criterion = 'gini', max_depth = 3)
     model.fit(X_train, y_train)
 
     plt.figure(figsize = (10, 8))
