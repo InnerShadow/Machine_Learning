@@ -50,7 +50,7 @@ def __main__():
     model.fit(X_train, y_train)
 
     plt.figure(figsize = (10, 8))
-    plot_tree(model, feature_names = list(df.drop('Survived', axis = 1).columns), filled = True, class_names = ['Not Survived', 'Survived'])
+    plot_tree(model, feature_names = list(df.drop('Survived', axis = 1).columns), filled = True, class_names = ['Die', 'Survived'])
     plt.show()
 
     predictions = model.predict(X_test)
