@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
-from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score, roc_auc_score, roc_curve, confusion_matrix
+from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score, roc_auc_score, roc_curve, confusion_matrix, classification_report
 import seaborn as sns
 
 def __main__():
@@ -36,6 +36,10 @@ def __main__():
     X = df.drop('Survived', axis = 1)
     y = df['Survived']
 
+    plt.figure(figsize = (10, 6))
+    sns.heatmap(df.corr(), annot = True)
+    plt.show()
+
     X_train, X_test, y_train, y_test = train_test_split(X, y, train_size = 0.8)
 
     scaler = StandardScaler()
@@ -56,6 +60,8 @@ def __main__():
     print(f'Precision: {precision_score(predictions, y_test)}')
     print(f'F1: {f1_score(predictions, y_test)}')
     print(f'ROC-AUC: {roc_auc_score(predictions, y_test)}\n')
+
+    print(classification_report(predictions, y_test))
 
     print(model.feature_importances_)
 
@@ -79,3 +85,4 @@ def __main__():
 
 if __name__ == '__main__':
     __main__()
+
