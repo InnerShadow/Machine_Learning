@@ -61,9 +61,9 @@ def __main__():
     print(f'F1: {f1_score(predictions, y_test)}')
     print(f'ROC-AUC: {roc_auc_score(predictions, y_test)}\n')
 
-    print(classification_report(predictions, y_test))
+    print(classification_report(predictions, y_test), '\n')
 
-    print(model.feature_importances_)
+    print(model.feature_importances_, '\n')
 
     confusion = confusion_matrix(predictions, y_test)
     plt.figure(figsize = (8, 6))
